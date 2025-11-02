@@ -15,6 +15,8 @@ int populacao1;
 float area1;
 float pib1;
 int turistico1;
+float densidadepopu1;
+float pibcapita1;
 
 //variaveis da carta 2
 char estado2[10];
@@ -24,9 +26,11 @@ int populacao2;
 float area2;
 float pib2;
 int turistico2;
+float densidadepopu2;
+float pibcapita2;
 
   // Área para entrada de dados
-printf("Vamos criar duas cartas\nPrimeira carta\nDigite o estado da primeira carta: ");
+printf("Vamos criar duas cartas\n*** Primeira carta ***\nDigite o estado da primeira carta: ");
 scanf("%s", estado1);
 printf("Agora digite o codigo da carta: ");
 scanf("%s", codigo1);
@@ -42,7 +46,7 @@ printf("Agora digite a quantidade de pontos turísticos: ");
 scanf("%d", &turistico1);
 
 //secunda carta
-printf("\nSecunda carta\nDigite o Estado da Secunda carta: ");
+printf("\n*** Segunda carta ***\nDigite o Estado da Segunda carta: ");
 scanf("%s", estado2);
 printf("Agora digite o codigo da carta: ");
 scanf("%s", codigo2);
@@ -57,13 +61,23 @@ scanf("%f", &pib2);
 printf("Agora digite a quantidade de pontos turísticos: ");
 scanf("%d", &turistico2);
 
+float densidadepopu1 = (float) populacao1 / area1;
+float pibcapita1 = (float) populacao1 / area1;
+
+float densidadepopu2 = (float) populacao2 / area2;
+float pibcapita2 = (float) populacao2 / area2;
+
 // Área para exibição dos dados da cidade
-printf("\nPrimeira carta:\n\nEstado:%s\nCodigo:%s\nCidade:%s\n", estado1, codigo1, cidade1);
-printf("População:%d\nÁrea:%fkm²\nPib:%f\nPontos Turísticos:%d\n",populacao1, area1, pib1, turistico1);
+printf("\n*** Primeira Carta ***\n");
+printf("Estado:%s\nCodigo:%s\nCidade:%s\n", estado1, codigo1, cidade1);
+printf("População:%d\nÁrea:%.3fkm²\nPib:%.3f Bilhões de Reais\nPontos Turísticos:%d\n",populacao1, area1, pib1, turistico1);
+printf("Densidade Populacional: %.3f hab/Km²\nPIB per Capita: %.3f Reais\n",densidadepopu1,pibcapita1);
 
 //Mostrando os dados da secunda carta
-printf("\nSecunda carta:\n\nEstado:%s\nCodigo:%s\nCidade:%s\n", estado2, codigo2, cidade2);
-printf("População:%d\nÁrea:%fkm²\nPib:%f\nPontos Turísticos:%d\n",populacao2, area2, pib2, turistico2);
+printf("\n*** Segunda Carta ***\n");
+printf("\nEstado:%s\nCodigo:%s\nCidade:%s\n", estado2, codigo2, cidade2);
+printf("População:%d\nÁrea:%.3fkm²\nPib:%.3f Bilhões de Reais\nPontos Turísticos:%d\n",populacao2, area2, pib2, turistico2);
+printf("Densidade Populacional: %.3f hab/Km²\nPIB per Capita: %.3f Reais\n",densidadepopu2,pibcapita2);
 
 return 0;
 } 
